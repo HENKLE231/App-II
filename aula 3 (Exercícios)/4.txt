@@ -1,0 +1,7 @@
+void main() {
+  double area;
+  double medidaLado = 3;
+  
+  area = medidaLado * medidaLado;
+  print(area);
+}

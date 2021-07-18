@@ -1,0 +1,9 @@
+void main() {
+  double area;
+  double baseMaior = 3;
+  double baseMenor = 1;
+  double altura = 2;
+  
+  area = (baseMaior + baseMenor) * altura / 2;
+  print(area);
+}
