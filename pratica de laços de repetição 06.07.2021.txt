@@ -1,0 +1,132 @@
+1. Dada uma variável i iniciada com valor 0 que é incrementada ao final de cada loop de um laço de repetição. Qual é a condição de execução deste laço quando o mesmo tem a função de imprimir todos os números de 0 a 100?
+
+void main() {
+  int i = 0;
+  while (i <= 100) {
+    print("$i");
+    i++;
+  }
+}
+
+2. Crie um programa que leia uma lista com 10 índices, imprima na tela todos os números e retorne o maior deles.
+
+void main() {
+  List<int> numeros = [1, 4, 3, 2, 6, 5, 9, 7, 8, 0];
+  int maior = numeros[0];
+  for (int i = 0; i < numeros.length; i++) {
+    if (numeros[i] > maior) {
+      maior = numeros[i];
+    }
+  }
+  print(maior);
+}
+
+3. Suponha que você esteja desenvolvendo um programação que realiza a multiplicação entre dois números inteiros e repita esta operação até chegar ao valor de 1200. Exibir as operações efetuadas na tela.
+
+void main() {
+  int resultado = 0;
+  for (int i = 0; resultado < 1200; i++) {
+    resultado = i * i;
+    print("$i x $i = $resultado");
+  }  
+}
+
+4.Desenvolver um programa que escreva os números pares de 1 a 10. 
+
+void main() {
+  for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+      print(i);
+    }
+  }
+}
+
+5.Desenvolver um programa em Dart que calcule a média da turma. Leia as médias de 10 alunos usando comandos de repetição. Use uma lista para armazenar as notas.
+
+void main() {
+  List<int> medias = [8, 6, 4, 8, 4, 6, 5, 7, 4, 10];
+  int somaMedias = 0;
+  for (int i = 0; i < medias.length; i++) {
+    somaMedias += medias[i];
+  }
+  double mediaTurma = somaMedias / medias.length;
+  print("A média da turma é de $mediaTurma.");
+}
+
+6. Desenvolver um programa em Dart chamado Tabuada que receba um valor e mostre a tabuada desse valor.
+
+void main() {
+  int numeroEscolhido = 5;
+  int multiplicadoAte = 10;
+  for(int i = 1; i <= multiplicadoAte; i++) {
+    print("$numeroEscolhido x $i = ${numeroEscolhido*i}");
+  }
+}
+
+7. Desenvolver um programa que leia a altura de 15 jogadores de futebol e calcule a média de altura, a maior altura e a menor altura. Use uma lista para armazenar as alturas.
+
+void main() {
+  List<double> alturas = [1.67, 1.43, 1.87, 1.99, 1.80, 1.71, 1.88, 1.78, 1.77, 1.82];
+  double mediaAltura = 0.0;
+  double maiorAltura = alturas[0];
+  double menorAltura = alturas[0];
+  
+  for (int i = 0; i < alturas.length; i++) {
+    if (maiorAltura < alturas[i]) {
+      maiorAltura = alturas[i];
+    }
+    if (menorAltura > alturas[i]) {
+      menorAltura = alturas[i];
+    }
+    mediaAltura += alturas[i];
+  }
+  mediaAltura = mediaAltura / alturas.length;
+  
+  print("Alturas: $alturas.");
+  print("Mèdia de altura: $mediaAltura");
+  print("Maior altura: $maiorAltura");
+  print("Menor altura: $menorAltura");
+}
+
+8. Escreva um algoritmo que leia um valor inicial A e imprima a sequência de valores do cálculo de  A! e o seu resultado. Ex: 5! = 5 X 4 X 3 X 2 X 1 = 120
+
+void main() {
+  int valorEscolhido = 5;
+  int produto = 1;
+  String mensagem = "$valorEscolhido! = ";
+  for (int i = 1; i <= valorEscolhido; i++) {
+    produto = produto * i;
+    (i != valorEscolhido) ? mensagem += "$i x " : mensagem += "$i = $produto";
+  }
+  print(mensagem);
+}
+
+9. Desenvolver um programa que leia 7 pesos dos lutadores de boxes e verifique se ele está na categoria peso pesado. Sabe-se que o peso pesado é acima de 90 kg. Crie um map com o peso do boxeador e uma lista com o nome pelo índice.
+
+void main() {
+  List<String> nomes = ["Roberto", "Paulo", "Maurício", "Clovis", "Carlos", "Adriano", "Felipe"];
+  List<double> pesos = [74.3, 80.4, 123.5, 77.6, 90.0, 87.5, 66.9];
+  for (int i = 0; i < nomes.length; i++) {
+    print("${nomes[i]}: ${pesos[i]} ${(pesos[i] >= 90.0) ? '(Peso pesado)' : ''}");
+  }
+}
+
+10.Desenvolver um programa que some os valores de multas que o Detran aplicou em 1 dia (Use uma lista com valores sortidos).  E mostre a quantidade de multas de acordo com a tabela de pontos: 7 pontos (valor até 500), 14 pontos (valor de 501 a 1000) e 21 pontos (acima de 1000 reais)
+
+void main() {
+  List<double> multa = [500.60, 1346.99, 340.50, 765.00];
+  double somaMulta = 0;
+  int somaPontos = 0;
+  for (int i = 0; i < multa.length; i++) {
+    somaMulta += multa[i];
+    if (multa[i] <= 500.00) {
+      somaPontos += 7;
+    } else if (multa[i] > 500.00 && multa[i] < 1000.00) {
+     somaPontos += 14;
+    } else if (multa[i] >= 1000.00) {
+      somaPontos += 21;
+    }
+  }
+  print("Soma das multas: $somaMulta");
+  print("Soma dos pontos: $somaPontos");
+}

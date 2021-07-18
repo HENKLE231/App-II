@@ -1,0 +1,130 @@
+1. Escreva uma função que receba dois números inteiros retorne o menor número.
+
+void main() {
+  print(verificarNumeroMenor(3, 5));
+}
+
+int verificarNumeroMenor(int n1, int n2) => (n1 < n2) ? n1 : n2;
+
+2. Faça uma função que recebe por parâmetro um valor inteiro e positivo e retorna o valor lógico Verdadeiro caso o valor seja primo e Falso em caso contrário.
+
+void main() {
+  print(verificarNumeroPrimo(7));
+}
+
+bool verificarNumeroPrimo(int num) {
+  int dividiu = 0;
+  for (int i = 1; i <= num; i++) {
+    if (num % i == 0) {
+      dividiu ++;
+    }
+  }
+  return (dividiu <= 2);
+}
+
+3. Faça uma função que recebe um valor inteiro e verifica se o valor é positivo ou negativo. A função deve retornar um valor booleano.
+
+void main() {
+  print(verificarNumeroPositivo(-7));
+}
+
+bool verificarNumeroPositivo(num) => (num > 0);
+
+4. Faça uma função que leia um número não determinado de valores positivos e retorna a média aritmética dos mesmos.
+
+void main() {
+  List<int> numeros = [2, 6, 2, 99, 21, 1000];
+  print(calcularMedia(numeros));
+}
+
+String calcularMedia(List<int> numeros) {
+  double soma = 0;
+  for (int i = 0; i < numeros.length; i++) {
+    soma += numeros[i];
+  }
+  return (soma / numeros.length).toStringAsFixed(2);
+}
+
+5. Escreva uma função que recebe, por parâmetro, receba 2 valores inteiros e positivo e retorna o somatório desse valor.
+
+void main() {
+  print(somar(20, 80));
+}
+
+int somar(int n1, int n2) => n1 + n2;
+
+6. Faça uma função que recebe a idade de um nadador por parâmetro e retorna , também por parâmetro, a categoria desse nadador de acordo com a tabela abaixo (imagem2):
+
+void main() {
+  print(verificarCategoria(15));
+}
+
+String verificarCategoria(int idade) {
+  String categoria = "";
+  if (idade < 5) {
+    categoria = "nenhuma";
+  } else if (idade >= 5 && idade <= 7) {
+    categoria = "Infantil A";
+  } else if (idade >= 8 && idade <= 10) {
+    categoria = "Infantil B";
+  } else if (idade >= 11 && idade <= 13) {
+    categoria = "Juvenil A";
+  } else if (idade >= 14 && idade <= 17) {
+    categoria = "Juvenil B";
+  } else {
+    categoria = "Adulto";
+  }
+  return categoria;
+}
+
+7. Faça uma função que recebe um valor inteiro e verifica se o valor é par. A função deve retornar 1 se o número for par e 0 se for ímpar.
+
+void main() {
+  print(verificarNumeroPar(7));
+}
+
+int verificarNumeroPar(int num) => (num % 2 == 0) ? 1 : 0;
+
+8. Fazer um programa que receba 2 números e informe:
+  a) A soma dos números;
+  b) O produto do primeiro número pelo quadrado do segundo;
+  c) O quadrado do primeiro número;
+  d) O triplo do dobro da soma dos dois números
+  e) A metade do triplo do dobro da soma dos dois números
+  f) O módulo do primeiro número.
+
+void main() {
+  calcular(5, 5);
+}
+
+void calcular(int n1, int n2) {
+  print("Soma: ${n1 + n2} \n");
+  print("O produto do primeiro número pelo quadrado do segundo: ${n1 * (n2 * n2)}\n");
+  print("O quadrado do primeiro número: ${n1 * n1}\n");
+  print("O triplo do dobro da soma dos dois números: ${(n1 + n2) * 6}\n");
+  print("A metade do triplo do dobro da soma dos dois números: ${(n1 + n2) * 3}\n");
+  print("O módulo do primeiro número: ${(n1 < 0) ? -n1 : n1}");
+}
+
+9-. Faça um programa que leia dois valores e imprima:
+  a) se o primeiro valor for maior que o segundo, a lista de valores do primeiro até o segundo;
+  b) se o primeiro valor for menor que o segundo a lista de valores do segundo até o primeiro em ordem decrescente;
+  c) se ambos forem iguais a mensagem "valores iguais".
+
+void main() {
+  verificarNumeros(8, 10);
+}
+
+void verificarNumeros(int n1, int n2) {
+  if (n1 < n2) {
+    for (int i = n1; i <= n2; i++) {
+      print(i);
+    }
+  } else if (n1 > n2) {
+    for (int i = n1; i >= n2; i--) {
+      print(i);
+    }
+  } else {
+    print("Valores iguais.");
+  }
+}
